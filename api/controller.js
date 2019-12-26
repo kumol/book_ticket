@@ -2,16 +2,16 @@ const mongoose = require("mongoose");
 var Cost = require("./../models/cost");
 var Member = require('./../models/member');
 var Rate = require("./../models/rate");
-// module.exports.cost=(req,res,next)=>{
-//     console.log(req.body);
-//     const cost =new Cost({
-//         cost:req.body.cost,
-//         number:2,
-//     })
-//     console.log(cost);
-//     console.log("Idon't know");
-//     res.status(200).json("Done");
-// }
+module.exports.cost=(req,res,next)=>{
+    console.log(req.body);
+    const cost =new Cost({
+        cost:req.body.cost,
+        number:2,
+    })
+    console.log(cost);
+    console.log("Idon't know");
+    res.status(200).json("Done");
+}
 module.exports.member = (req,res,next)=>{
     var member = new Member();
     member.name = req.body.name;
