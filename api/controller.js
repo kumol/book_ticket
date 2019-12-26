@@ -74,6 +74,11 @@ module.exports.cost = (req,res,next)=>{
         res.status(500).json({message:"there was an err while cost updating"});
     })
 }
+
 module.exports.rateCalculation = (req,res,next)=>{
-    Member.find({})
+    Member.find({}).then((member)=>{
+        res.status(200).json({member:member});
+    }).catch((err)=>{
+        res.status(404).json({error:err});
+    })
 }
